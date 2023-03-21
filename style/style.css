@@ -10,6 +10,7 @@ html {
 
 body {
   background-color: #f6f8f8;
+  overflow-x: hidden;
 }
 
 a,
@@ -112,6 +113,60 @@ p.intro {
   font-family: "Inter", sans-serif;
   position: relative;
 }
+#main-container .swiper {
+  width: 100%;
+  height: 100%;
+}
+#main-container .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  height: 493px;
+  display: flex;
+  padding: 2em 0;
+  justify-content: center;
+  align-items: center;
+}
+#main-container .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#main-container .container-menu {
+  background-color: #000000;
+  display: relative;
+}
+#main-container .container-menu .content-menu {
+  transition: 1s transform;
+  height: 100vh;
+  width: 95vw;
+  background-color: #f6f8f8;
+  position: fixed;
+  top: 0%;
+  z-index: 999;
+  right: 0%;
+  box-shadow: -60px 0 60px 30px rgba(0, 0, 0, 0.6);
+}
+#main-container .container-menu .content-menu .nav-menu {
+  display: flex;
+  flex-direction: column;
+  padding-top: 6rem;
+}
+#main-container .container-menu .content-menu .nav-menu li {
+  border-bottom: 1px solid #ccc;
+  padding: 0.7em 0em;
+}
+#main-container .container-menu .content-menu .nav-menu li a {
+  color: #000000;
+}
+#main-container .container-menu .close {
+  transform: translateX(200%);
+}
+#main-container .container-menu .open {
+  transform: translateX(0%);
+}
 #main-container nav {
   position: fixed;
   background-color: #f6f8f8;
@@ -129,8 +184,10 @@ p.intro {
 #main-container nav .nav-brand {
   display: flex;
   max-height: 60px;
+  max-width: 88vw;
+  width: 100%;
   align-items: center;
-  justify-content: center;
+  margin: 0 auto;
   gap: 5vw;
 }
 #main-container nav .nav-brand .brand-logo {
@@ -145,7 +202,45 @@ p.intro {
   padding: 1.8rem 0.25rem 1.6rem;
   font-weight: bold;
 }
-#main-container nav .nav-brand .nav-menu {
+#main-container .mobile-header {
+  display: none;
+  position: relative;
+}
+#main-container .desktop-header {
+  min-height: 60px;
+  position: absolute;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+  background-color: #f5f8f7;
+  border-bottom: 1px solid #9ea5a5;
+}
+#main-container .desktop-header .desktop-header-inner {
+  width: 88vw !important;
+  margin: 0 auto;
+  display: flex;
+  padding: 0.7rem 0;
+}
+#main-container .desktop-header .desktop-header-inner .nav-brand {
+  display: flex;
+  max-height: 60px;
+  align-items: center;
+  justify-content: center;
+  gap: 5vw;
+}
+#main-container .desktop-header .desktop-header-inner .nav-brand .brand-logo {
+  font-size: 1.4rem;
+  text-decoration: none;
+  display: inline-flex;
+  height: 100%;
+  transition: all 0.2s ease;
+  color: #242929;
+  line-height: 1;
+  align-items: center;
+  padding: 1.8rem 0.25rem 1.6rem;
+  font-weight: bold;
+}
+#main-container .desktop-header .desktop-header-inner .nav-brand .nav-menu {
   display: flex;
   gap: 1rem;
   min-height: 60px;
@@ -153,7 +248,7 @@ p.intro {
   margin: 0;
   justify-content: center;
 }
-#main-container nav .nav-brand .nav-menu li a {
+#main-container .desktop-header .desktop-header-inner .nav-brand .nav-menu li a {
   font-size: 15.6px;
   display: flex;
   align-items: center;
@@ -164,29 +259,10 @@ p.intro {
   border-bottom: 3px solid transparent;
   background-image: none;
 }
-#main-container .desktop-header {
-  display: none;
-}
-#main-container .mobile-header {
-  min-height: 60px;
-  position: absolute;
-  top: 0;
-  z-index: 99;
-  width: 100%;
-  background-color: #f5f8f7;
-  border-bottom: 1px solid #9ea5a5;
-}
-#main-container .mobile-header .mobile-header-inner {
-  width: 88vw;
-  margin: 0 auto;
-  display: flex;
-  padding: 0.7rem 0;
-}
 #main-container .navbar-toggle {
   position: fixed;
-  display: none;
   right: 0;
-  bottom: 0% !important;
+  bottom: 0%;
   z-index: 999;
   height: 60px;
   width: 60px;
@@ -284,8 +360,7 @@ p.intro {
   font-size: 1.8rem;
 }
 #main-container main .sticky {
-  position: sticky !important;
-  position: -webkit-sticky !important;
+  position: sticky;
   top: calc(80px + 1rem) !important;
 }
 #main-container main .sticky h2 {
@@ -352,40 +427,38 @@ footer p {
     font-size: 3.2rem !important;
     letter-spacing: -0.05em;
   }
-  #main-container .case-study-feature-item .sticky {
-    background-color: #242929 !important;
-    position: static !important;
-  }
-  #main-container .case-study-feature-item .sticky h2 {
-    font-size: 1.4rem;
-  }
   p,
   li {
     font-size: 1.185rem;
   }
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (min-width: 767px) {
   .navbar-toggle {
     position: absolute;
-    bottom: 0% !important;
+    top: 0% !important;
   }
 }
 @media only screen and (max-width: 993px) {
-  .mobile-header {
+  .desktop-header {
     display: none !important;
   }
-  .desktop-header {
+  .mobile-header {
     display: block !important;
   }
-  .nav-menu {
-    display: none !important;
+  .sticky {
+    position: static !important;
+    padding: 2em 0;
+  }
+  .sticky h2 {
+    font-size: 1.4rem;
   }
 }
-@media only screen and (min-width: 767px) {
+@media only screen and (min-width: 993px) {
   .navbar-toggle {
-    display: block;
-    bottom: 0;
-    background-color: #000000 !important;
+    display: none;
+  }
+  .container-menu {
+    display: none;
   }
 }
 .hide {

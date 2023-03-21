@@ -1,4 +1,4 @@
-// const navbarToggle = document.querySelector(".navbar-toggle");
+const navbarToggle = document.querySelector(".navbar-toggle");
 // const mobileHeader = document.querySelector(".mobile-header");
 // const deskTopHeader = document.querySelector(".desktop-header");
 
@@ -14,6 +14,19 @@
 //     deskTopHeader.classList.remove("hide");
 //   }
 // });
+const contentMenu = document.querySelector(".content-menu");
+navbarToggle.addEventListener("click", () => {
+  if (contentMenu.classList.contains("open")) {
+    contentMenu.classList.remove("open");
+    contentMenu.classList.add("close");
+
+    console.log("if");
+  } else {
+    contentMenu.classList.add("open");
+    contentMenu.classList.remove("close");
+    console.log("else");
+  }
+});
 {
   /* <hr class="rule-lg">
 <div class="row p-t-sm">
