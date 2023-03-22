@@ -1,182 +1,84 @@
 const navbarToggle = document.querySelector(".navbar-toggle");
-// const mobileHeader = document.querySelector(".mobile-header");
-// const deskTopHeader = document.querySelector(".desktop-header");
-
-// navbarToggle.addEventListener("click", () => {
-//   if (mobileHeader.classList.contains("hide")) {
-//     mobileHeader.classList.remove("hide");
-//     deskTopHeader.classList.add("hide");
-
-//     console.log("if");
-//   } else {
-//     mobileHeader.classList.add("hide");
-//     console.log("else");
-//     deskTopHeader.classList.remove("hide");
-//   }
-// });
 const contentMenu = document.querySelector(".content-menu");
-navbarToggle.addEventListener("click", () => {
-  if (contentMenu.classList.contains("open")) {
-    contentMenu.classList.remove("open");
-    contentMenu.classList.add("close");
+const navMenu = document.querySelector(".nav-menu");
+const NavToggle = document.querySelector(".toggled");
+const desktopHeader = document.querySelector(".desktop-header");
 
-    console.log("if");
+//Navigation Icon Toggle
+
+navbarToggle.addEventListener("click", () => {
+  // Add a click event listener to the `navbarToggle` element. When the element is clicked, the function inside the arrow function will be executed.
+
+  if (contentMenu.classList.contains("open")) {
+    // If the `contentMenu` element contains the "open" class, execute the following code:
+
+    contentMenu.classList.remove("open");
+    // Remove the "open" class from the `contentMenu` element.
+
+    contentMenu.classList.add("close");
+    // Add the "close" class to the `contentMenu` element.
+
+    NavToggle.classList.add("toggled");
+    // Add the "toggled" class to the `NavToggle` element.
+
   } else {
+    // If the `contentMenu` element does not contain the "open" class, execute the following code:
+
     contentMenu.classList.add("open");
+    // Add the "open" class to the `contentMenu` element.
+
     contentMenu.classList.remove("close");
-    console.log("else");
+    // Remove the "close" class from the `contentMenu` element.
+
+    NavToggle.classList.remove("toggled");
+    // Remove the "toggled" class from the `NavToggle` element.
+
   }
 });
-{
-  /* <hr class="rule-lg">
-<div class="row p-t-sm">
-  <div class="col-xs-12 col-md-2 p-r-md" style="height: 96%">
-    <div class="sticky">
-      <h2>Select Posts
-        <span class="hidden-xs hidden-sm"><br></span>
-        <a class="small nowrap" href="https://www.turnwall.com/articles/">All posts</a>
-      </h2>
-    </div>
 
-  </div>
-  <div class="col-xs-12 col-md-10">
-    <hr class="rule hidden-md hidden-lg">
-    <article id="post-2317"
-      class="post-2317 post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-bicycles">
-      <div class="row row-10">
 
-        <div class="col-sm-6 col-sm-7 col-xs-12">
+//Navigation Bar on scroll logic
+let lastScroll = 0;
+// Initialize a variable called `lastScroll` to 0. This variable will be used to keep track of the last scroll position.
 
-          <p class="post-categories">
-            <a href="https://www.turnwall.com/topics/design/" rel="category tag">Design</a>
-          </p>
+window.addEventListener('scroll', () => {
+  // Add an event listener to the window object, which listens for the 'scroll' event. When this event occurs, the function inside the arrow function will be executed.
 
-          <header class="entry-header">
-            <h4>
-              <a href="https://www.turnwall.com/articles/bicycles-design-inspiration/" rel="bookmark">Bicycles are
-                my design inspiration—a Rapha 5×5 talk</a>
-            </h4>
-          </header>
-          <p>I was recently invited to speak at an event called&nbsp;Rapha 5×5: Intervals on Design at Fresh
-            Tilled Soil, a local design consultancy. It’s a traveling series of design talks that Rapha runs in
-            different cities, and here’s the schtick: “5×5: Intervals on Design, a rapid-fire design talk where
-            five creatives will talk for five minutes…</p>
-          <div class="entry-meta">
-            <!--  &nbsp; &bullet; &nbsp; -->
-            <span class="span-reading-time rt-reading-time"><span class="rt-label rt-prefix"></span> <span
-                class="rt-time"> 8</span> <span class="rt-label rt-postfix">minute read</span></span>
-          </div>
-        </div>
+  const currentScroll = window.pageYOffset;
+  // Get the current scroll position using the `pageYOffset` property of the `window` object, and assign it to the `currentScroll` variable.
 
-        <div class="col-md-4 col-sm-5 col-xs-12 text-right">
+  if (currentScroll <= 0) {
+    desktopHeader.classList.remove("scroll-up");
+  }
+  // If the current scroll position is at the top of the page (i.e., less than or equal to 0), remove the "scroll-up" class from the `desktopHeader` element.
 
-          <a href="https://www.turnwall.com/articles/bicycles-design-inspiration/" rel="bookmark"
-            class="post-thumb">
-            <img width="360" height="240"
-              src="https://www.turnwall.com/wp-content/uploads/2016/10/Artboard-1-360x240.png"
-              class="attachment-thumbnail size-thumbnail wp-post-image ls-is-cached lazyloaded" alt=""
-              decoding="async" loading="lazy"
-              data-src="https://www.turnwall.com/wp-content/uploads/2016/10/Artboard-1-360x240.png"><noscript><img
-                width="360" height="240"
-                src="https://www.turnwall.com/wp-content/uploads/2016/10/Artboard-1-360x240.png"
-                class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" loading="lazy"
-                data-eio="l" /></noscript> </a>
+  if (currentScroll > lastScroll && !desktopHeader.classList.contains("scroll-down")) {
+    desktopHeader.classList.remove("scroll-up");
+    desktopHeader.classList.add("scroll-down");
+  }
+  // If the current scroll position is greater than the last scroll position AND the `desktopHeader` element does not contain the "scroll-down" class, remove the "scroll-up" class and add the "scroll-down" class to the `desktopHeader` element.
 
-        </div>
+  if (currentScroll < lastScroll && desktopHeader.classList.contains("scroll-down")) {
+    desktopHeader.classList.remove("scroll-down");
+    desktopHeader.classList.add("scroll-up");
+  }
+  // If the current scroll position is less than the last scroll position AND the `desktopHeader` element contains the "scroll-down" class, remove the "scroll-down" class and add the "scroll-up" class to the `desktopHeader` element.
 
-      </div>
-    </article>
-    <article id="post-1821"
-      class="post-1821 post type-post status-publish format-standard has-post-thumbnail hentry category-adventure tag-kayaking">
-      <div class="row row-10">
+  lastScroll = currentScroll;
+  // Update the `lastScroll` variable with the current scroll position, so it can be used as the last scroll position in the next `scroll` event.
+});
 
-        <div class="col-sm-6 col-sm-7 col-xs-12">
+// navlink highlighting
+const navLinks = document.querySelectorAll(".nav-link");
 
-          <p class="post-categories">
-            <a href="#" rel="category tag">Adventure</a>
-          </p>
+navLinks.forEach(navLink => {
+  navLink.addEventListener("click", () => {
+    // Remove the "active" class from all nav links
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+    });
 
-          <header class="entry-header">
-            <h4>
-              <a href="#" rel="bookmark">Talking to a giant tanker from a little plastic boat</a>
-            </h4>
-          </header>
-          <p>It’s kayaking season here in New England, and as I was returning to the water this year I realized I
-            needed to reacquaint&nbsp;myself with VHF radio usage. So I’m going to share this story from last
-            summer in hopes that it helps some other kayakers in a similar situation, as I haven’t found a ton…
-          </p>
-          <div class="entry-meta">
-            <!--  &nbsp; &bullet; &nbsp; -->
-            <span class="span-reading-time rt-reading-time"><span class="rt-label rt-prefix"></span> <span
-                class="rt-time"> 9</span> <span class="rt-label rt-postfix">minute read</span></span>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-sm-5 col-xs-12 text-right">
-
-          <a href="#" rel="bookmark" class="post-thumb">
-            <img width="360" height="240"
-              src="https://www.turnwall.com/wp-content/uploads/2014/06/IMG_4040-360x240.jpg"
-              class="attachment-thumbnail size-thumbnail wp-post-image lazyautosizes ls-is-cached lazyloaded"
-              alt="" decoding="async" loading="lazy"
-              data-src="https://www.turnwall.com/wp-content/uploads/2014/06/IMG_4040-360x240.jpg"
-              data-srcset="https://www.turnwall.com/wp-content/uploads/2014/06/IMG_4040-360x240.jpg 360w, https://www.turnwall.com/wp-content/uploads/2014/06/IMG_4040-750x499.jpg 750w, https://www.turnwall.com/wp-content/uploads/2014/06/IMG_4040-1024x682.jpg 1024w, https://www.turnwall.com/wp-content/uploads/2014/06/IMG_4040-400x266.jpg 400w, https://www.turnwall.com/wp-content/uploads/2014/06/IMG_4040.jpg 2000w"
-              data-sizes="auto" sizes="360px"
-              srcset="https://www.turnwall.com/wp-content/uploads/2014/06/IMG_4040-360x240.jpg 360w, https://www.turnwall.com/wp-content/uploads/2014/06/IMG_4040-750x499.jpg 750w, https://www.turnwall.com/wp-content/uploads/2014/06/IMG_4040-1024x682.jpg 1024w, https://www.turnwall.com/wp-content/uploads/2014/06/IMG_4040-400x266.jpg 400w, https://www.turnwall.com/wp-content/uploads/2014/06/IMG_4040.jpg 2000w"><noscript><img
-                width="360" height="240"
-                src="https://www.turnwall.com/wp-content/uploads/2014/06/IMG_4040-360x240.jpg"
-                class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" loading="lazy"
-                srcset="https://www.turnwall.com/wp-content/uploads/2014/06/IMG_4040-360x240.jpg 360w, https://www.turnwall.com/wp-content/uploads/2014/06/IMG_4040-750x499.jpg 750w, https://www.turnwall.com/wp-content/uploads/2014/06/IMG_4040-1024x682.jpg 1024w, https://www.turnwall.com/wp-content/uploads/2014/06/IMG_4040-400x266.jpg 400w, https://www.turnwall.com/wp-content/uploads/2014/06/IMG_4040.jpg 2000w"
-                sizes="(max-width: 360px) 100vw, 360px" data-eio="l" /></noscript> </a>
-
-        </div>
-
-      </div>
-    </article>
-    <article id="post-601"
-      class="post-601 post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-css tag-herber-matter tag-html tag-illustration tag-karl-gerstner tag-knolling tag-paula-scher">
-      <div class="row row-10">
-
-        <div class="col-sm-6 col-sm-7 col-xs-12">
-
-          <p class="post-categories">
-            <a href="#" rel="category tag">Design</a>
-          </p>
-
-          <header class="entry-header">
-            <h4>
-              <a href="https://www.turnwall.com/articles/gerstner-tische-inspiration/" rel="bookmark">Paying
-                homage to (or stealing from) your inspiration</a>
-            </h4>
-          </header>
-          <p>I had an idea for the new version of my site: I was going to illustrate objects using only HTML and
-            CSS ( to show that I know how to do stuff with code), and make them look like they were neatly
-            organized in a physical space*&nbsp;(which seems vaguely trendy) according to the underlying grid…</p>
-          <div class="entry-meta">
-            <!--  &nbsp; &bullet; &nbsp; -->
-            <span class="span-reading-time rt-reading-time"><span class="rt-label rt-prefix"></span> <span
-                class="rt-time"> 5</span> <span class="rt-label rt-postfix">minute read</span></span>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-sm-5 col-xs-12 text-right">
-
-          <a href="#" rel="bookmark" class="post-thumb">
-            <img width="360" height="240"
-              src="https://www.turnwall.com/wp-content/uploads/2013/07/gerstner-tische-rotated-cover-e1374492107731-360x240.jpg"
-              class="attachment-thumbnail size-thumbnail wp-post-image ls-is-cached lazyloaded" alt=""
-              decoding="async" loading="lazy"
-              data-src="https://www.turnwall.com/wp-content/uploads/2013/07/gerstner-tische-rotated-cover-e1374492107731-360x240.jpg"><noscript><img
-                width="360" height="240"
-                src="https://www.turnwall.com/wp-content/uploads/2013/07/gerstner-tische-rotated-cover-e1374492107731-360x240.jpg"
-                class="attachment-thumbnail size-thumbnail wp-post-image" alt="" decoding="async" loading="lazy"
-                data-eio="l" /></noscript> </a>
-
-        </div>
-
-      </div>
-    </article>
-  </div>
-
-</div> */
-}
+    // Add the "active" class to the clicked nav link
+    navLink.classList.add("active");
+  });
+});

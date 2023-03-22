@@ -8,12 +8,16 @@
     <title>Single Page Application</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
-    <link rel="stylesheet" href="/style/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/style/style.css">
   </head>
 
   <body>
     <section id="main-container">
+      <!------------ header section started -------------->
+
+      <!------------- mobile header -------------->
+
       <header class="mobile-header ">
         <nav class="public-navbar-main">
           <div class="nav-brand">
@@ -21,59 +25,71 @@
           </div>
         </nav>
 
-      </header>
-      <div class="container-menu ">
-
-
-        <div class="content-menu close">
-          <header class="mobile-header ">
-            <nav class="public-navbar-main">
-              <div class="nav-brand">
-                <a class="brand-logo"> Alex Turnwall </a>
-              </div>
-            </nav>
-
-            <ul class="nav-menu">
-              <li>
-                <a href="#work">Work</a>
-              </li>
-              <li>
-                <a href="#blog">Blog</a>
-              </li>
-              <li>
-                <a href="#about">About</a>
-              </li>
-            </ul>
-          </header>
+        <div class="container-menu ">
+          <div class="content-menu close">
+            <header class="mobile-header ">
+              <nav class="public-navbar-main">
+                <div class="nav-brand">
+                  <a class="brand-logo"> Alex Turnwall </a>
+                </div>
+              </nav>
+              <ul class="nav-menu">
+                <li >
+                  <a class="nav-link"
+                href="#">Home</a>
+                </li>
+                <li  >
+                  <a class="nav-link active" href="#about">About</a>
+                </li>
+                <li  >
+                  <a class="nav-link " href="#work">Services</a>
+                </li>
+                <li  >
+                  <a class="nav-link " href="#blog">Blog</a>
+                </li>
+              </ul>
+            </header>
+          </div>
+  
         </div>
-
-      </div>
+          <!------------- navbar Toggle section started -------------->
+      <a class="navbar-toggle toggled ">
+        <span class="one"></span>
+        <span class="two"></span>
+        <span class="three"></span>
+      </a>
+      </header>
+      <!------------- desktop header -------------->
 
       <header class="desktop-header ">
         <div class="desktop-header-inner">
           <div class="nav-brand">
             <a class="brand-logo"> Alex Turnwall </a>
             <ul class="nav-menu">
-              <li>
-                <a href="#work">Work</a>
+              <li >
+                <a class="nav-link"
+              href="#">Home</a>
               </li>
-              <li>
-                <a href="#blog">Blog</a>
+              <li  >
+                <a class="nav-link active" href="#about">About</a>
               </li>
-              <li>
-                <a href="#about">About</a>
+              <li  >
+                <a class="nav-link " href="#work">Services</a>
+              </li>
+              <li  >
+                <a class="nav-link " href="#blog">Blog</a>
               </li>
             </ul>
           </div>
 
         </div>
       </header>
-      <a class="navbar-toggle open">
-        <span class="one"></span>
-        <span class="two"></span>
-        <span class="three"></span>
-      </a>
-      <main>
+    
+      <!-------------------- header section ended -------------------->
+
+      <!------------ main content ------------>
+      <main class="inner-container">
+        <!------------ hero section content ------------>
 
         <div class="row">
           <div class="col-xs-12 col-sm-10 col-md-12 col-lg-12">
@@ -91,35 +107,85 @@
           <div class="col-xs-12 col-sm-10 col-md-5 col-lg-4">
             <p>I've spent over a decade working with teams to ship products that delight users and advance
               organizations’
-              goals. <a href="https://www.turnwall.com/about/">Learn More</a></p>
+              goals. <a class="overlay" href="#">Learn More</a></p>
           </div>
           <div class="col-xs-12 col-sm-10 col-md-5 col-lg-4">
 
-            <p>Staff UX Design Lead @Verily. Previously Head of Design <a
-                href="https://www.turnwall.com/work/admithub/">@Admithub</a>, Chief Design Officer <a
-                href="https://www.turnwall.com/work/bevspot-inventory-counter/">@BevSpot</a>, Lecturer @Northeastern</p>
+            <p>Staff UX Design Lead @Verily. Previously Head of Design <a class="overlay" href="#">@Admithub</a>, Chief
+              Design Officer <a href="#" class="overlay">@BevSpot</a>, Lecturer
+              <a href="#" class="overlay">
+
+                @Northeastern
+              </a>
+            </p>
           </div>
         </div>
-        <hr id="work" class="rule-lg" />
-        <!-- -------------------work------------------- -->
-        <section>
-          <div class="row p-t-xs" style="position: relative">
 
+        <hr class="rule-lg" />
 
-            <div class="col-md-12 col-lg-2 p-r-md sticky" style="height: 96%">
+        <!---------------------about section--------------------->
+        <section id="about">
+          <div class="row main-page-intro ">
+            <div class="col-sm-8 col-md-7">
+              <h1 class="display-highlight">About</h1>
+              <p class="intro">Designer, developer, and product strategist trying to move the needle.</p>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-xs-4 col-sm-3 col-md-2 p-b-sm">
+              <img src="https://www.turnwall.com/wp-content/themes/turnwall_theme/images/hire/headshot.png" width="228"
+                height="228" alt="author image">
+            </div>
+          </div>
+          <hr class="rule-lg">
+          <!---------------------about intro section--------------------->
 
+          <div class="row p-b-3xl">
+            <div class="col-xs-12 col-md-2"></div>
+            <div class="col-md-12 col-lg-6">
+              <p>I’ve been called a ‘pragmatic’ designer.<br>I take that as a compliment.</p>
+              <p>My professional work slants towards product design that can make a measurable impact. Usability over
+                style. Stylish when called for.</p>
+              <p>Learning from your customers and shipping delightful, yet useful tools for them is both rewarding and
+                challenging, which is why I've been drawn to working with early products, especially those where you can
+                get to know your users personally.</p>
+              <p>I’ve had the privilege of working with some great teams on some truly impactful products, and have
+                learned a thing or two along the way. I bring that experience to new ventures and try to share it with
+                folks through mentoring and <a href="#" class="overlay">writing</a>.</p>
+              <p>I tend to think about design like a founder, because I’ve been one. Balancing process and instinct, the
+                goal is to find harmony between user delight and business strategy, as fast as you can deliver quality.
+              </p>
+              <p>If this seems like your cup of tea, I'd be pleased to chat about your project needs. My availability is
+                <a href="# " class="overlay">below</a>.
+              </p>
+              <p>-Alex-</p>
+            </div>
+            <div class="col-md-12 col-lg-2"></div>
+            <div class="col-xs-12 col-md-2">
+              <p>
+                <a href="mailto:alex@turnwall.com">alex@turnwall.com</a>
+                <br>linkedin <a class="overlay" href="https://www.linkedin.com/in/alexturnwall/"
+                  target="_blank">/alexturnwall</a>
+              </p>
+            </div>
+          </div>
+        </section>
+        <hr class="rule-lg">
+        <!-- -------------------blog------------------- -->
+        <!---------------------work section--------------------->
+        <section id="work">
+          <h1 class="display-highlight">Services</h1>
+
+          <div class="row p-t-xs p-b-3xl position-relative">
+            <div class="col-lg-2 sticky">
               <h2>Select Work
-                <span class="hidden-xs hidden-sm"><br></span>
-                <a class="small nowrap" href="#">All work</a>
+                <span class="m-0 p-0 d-none d-lg-inline"><br></span>
+                <a class="small nowrap overlay" href="#" >All work</a>
               </h2>
-
             </div>
 
             <div class="col-md-12 col-lg-10 ">
-
-
-              <a class="case-study-feature-item" href="#">
-
+              <hr class="rule">
+              <div class="case-study-feature-item">
                 <div class="row ">
                   <div class=" col-sm-12  col-md-6">
                     <span class="cs-thumb">
@@ -136,11 +202,11 @@
                     </span>
                   </div>
                 </div>
-              </a>
+              </div>
               <hr class="rule">
 
 
-              <a class="case-study-feature-item" href="#">
+              <div class="case-study-feature-item">
                 <div class="row row-10">
                   <div class=" col-sm-12  col-md-6">
                     <span class="cs-thumb">
@@ -158,12 +224,12 @@
                   </div>
                 </div>
 
-              </a>
+              </div>
 
               <hr class="rule">
 
 
-              <a class="case-study-feature-item" href="#">
+              <div class="case-study-feature-item">
                 <div class="row row-10">
                   <div class=" col-sm-12  col-md-6">
                     <span class="cs-thumb">
@@ -180,149 +246,224 @@
                     </span>
                   </div>
                 </div>
-              </a>
+              </div>
             </div>
           </div>
         </section>
-        <hr id="about" class="rule-lg">
-        <!-- -------------------about------------------- -->
-
-        <section>
-          <div class="row main-page-intro">
-            <div class="col-sm-8 col-md-7">
-              <h1 class="display-highlight">About</h1>
-              <p class="intro">Designer, developer, and product strategist trying to move the needle.</p>
-            </div>
-            <div class="col-md-1"></div>
-            <div class="col-xs-4 col-sm-3 col-md-2 p-b-sm">
-              <img class="multiply lazyloaded"
-                src="https://www.turnwall.com/wp-content/themes/turnwall_theme/images/hire/headshot.png" alt=""
-                data-src="https://www.turnwall.com/wp-content/themes/turnwall_theme/images/hire/headshot.png"
-                decoding="async" width="228" height="228">
-            </div>
-          </div>
-          <hr class="rule-lg">
-
-          <div class="row">
-            <div class="col-xs-12 col-md-2"></div>
-            <div class="col-xs-12 col-md-6">
-              <p>I’ve been called a ‘pragmatic’ designer.<br>I take that as a compliment.</p>
-              <p>My professional work slants towards product design that can make a measurable impact. Usability over
-                style. Stylish when called for.</p>
-              <p>Learning from your customers and shipping delightful, yet useful tools for them is both rewarding and
-                challenging, which is why I've been drawn to working with early products, especially those where you can
-                get to know your users personally.</p>
-              <p>I’ve had the privilege of working with some great teams on some truly impactful products, and have
-                learned a thing or two along the way. I bring that experience to new ventures and try to share it with
-                folks through mentoring and <a href="https://www.turnwall.com/articles/">writing</a>.</p>
-              <p>I tend to think about design like a founder, because I’ve been one. Balancing process and instinct, the
-                goal is to find harmony between user delight and business strategy, as fast as you can deliver quality.
-              </p>
-              <p>If this seems like your cup of tea, I'd be pleased to chat about your project needs. My availability is
-                <a href="#contact" class="scroll">below</a>.
-              </p>
-              <p>-Alex-</p>
-            </div>
-            <div class="col-xs-12 col-md-2"></div>
-            <div class="col-xs-12 col-md-2">
-
-              <!-- <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAawAAAGsAQMAAAC7BgHvAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAC1JREFUGBntwTEBAAAAwiD7p14IX2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwCVb9AABx/gS0AAAAABJRU5ErkJggg==" alt="" data-src="https://www.turnwall.com/wp-content/themes/turnwall_theme/images/hire/headshot.png" decoding="async" class="lazyload" width="428" height="428" /><noscript><img src="https://www.turnwall.com/wp-content/themes/turnwall_theme/images/hire/headshot.png" alt="" data-eio="l" /></noscript> -->
-
-              <p>
-                <a href="mailto:alex@turnwall.com">alex@turnwall.com</a>
-                <br>linkedin <a href="https://www.linkedin.com/in/alexturnwall/" target="_blank">/alexturnwall</a>
+        <hr class="rule-lg">
+        <section id="blog">
+          <section class="row">
+            <div class="col-sm-8">
+              <h1 class="display-highlight">Blog</h1>
+              <p class="subtitle">Infrequent writing about things like <a class="overlay"
+                  href="https://www.turnwall.com/topics/adventure/">Adventure</a>, <a class="overlay"
+                  href="https://www.turnwall.com/topics/business-entrepreneurship/">Business</a>, <a class="overlay"
+                  href="https://www.turnwall.com/topics/code/">Code</a>, <a class="overlay"
+                  href="https://www.turnwall.com/topics/design/">Design</a>, <a class="overlay"
+                  href="https://www.turnwall.com/topics/maker/">Making</a>, <a class="overlay"
+                  href="https://www.turnwall.com/topics/writing/">Musings</a>, <a class="overlay"
+                  href="https://www.turnwall.com/topics/updates/">Updates</a>, <a class="overlay"
+                  href="https://www.turnwall.com/topics/worklife/">WorkLife</a>, and more.
               </p>
             </div>
-          </div>
-        </section>
+          </section>
+          <!-- Image slider -->
+          <section>
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="./imges/01imge.jpg" alt="sliderimge"></div>
+                <div class="swiper-slide"><img src="./imges/02imge.jpg" alt="sliderimge"></div>
+                <div class="swiper-slide"><img src="./imges/03imge.jpg" alt="sliderimge"></div>
+                <div class="swiper-slide"><img src="./imges/04imge.jpg" alt="sliderimge"></div>
+                <div class="swiper-slide"><img src="./imges/05imge.jpg" alt="sliderimge"></div>
+                <div class="swiper-slide"><img src="./imges/06imge.jpg" alt="sliderimge"></div>
+                <div class="swiper-slide"><img src="./imges/07imge.jpg" alt="sliderimge"></div>
+                <div class="swiper-slide"><img src="./imges/08imge.jpg" alt="sliderimge"></div>
+                <div class="swiper-slide"><img src="./imges/09imge.jpg" alt="sliderimge"></div>
 
-
-        <section class="row">
-
-          <div class="col-xs-12 col-md-10 p-t-md">
-
-          </div>
-
-          </div>
-
-        </section>
-        <hr class="rule-lg" id="blog">
-        <!-- -------------------blog------------------- -->
-
-        <section class="row">
-          <!-- <div class="col-sm-2"></div> -->
-          <div class="col-sm-8">
-            <h1 class="display-highlight">Blog</h1>
-            <p class="subtitle">Infrequent writing about things like <a class="cat-index"
-                href="https://www.turnwall.com/topics/adventure/">Adventure</a>, <a class="cat-index"
-                href="https://www.turnwall.com/topics/business-entrepreneurship/">Business</a>, <a class="cat-index"
-                href="https://www.turnwall.com/topics/code/">Code</a>, <a class="cat-index"
-                href="https://www.turnwall.com/topics/design/">Design</a>, <a class="cat-index"
-                href="https://www.turnwall.com/topics/maker/">Making</a>, <a class="cat-index"
-                href="https://www.turnwall.com/topics/writing/">Musings</a>, <a class="cat-index"
-                href="https://www.turnwall.com/topics/updates/">Updates</a>, <a class="cat-index"
-                href="https://www.turnwall.com/topics/worklife/">WorkLife</a>, and more.
-            </p>
-          </div>
-        </section>
-        <section>
-          <!-- Swiper -->
-          <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide"><img src="./imges/01imge.jpg" alt="sliderimge" ></div>
-              <div class="swiper-slide"><img src="./imges/02imge.jpg" alt="sliderimge" ></div>
-              <div class="swiper-slide"><img src="./imges/03imge.jpg" alt="sliderimge" ></div>
-              <div class="swiper-slide"><img src="./imges/04imge.jpg" alt="sliderimge" ></div>
-              <div class="swiper-slide"><img src="./imges/05imge.jpg" alt="sliderimge" ></div>
-              <div class="swiper-slide"><img src="./imges/06imge.jpg" alt="sliderimge" ></div>
-              <div class="swiper-slide"><img src="./imges/07imge.jpg" alt="sliderimge" ></div>
-              <div class="swiper-slide"><img src="./imges/08imge.jpg" alt="sliderimge" ></div>
-              <div class="swiper-slide"><img src="./imges/09imge.jpg" alt="sliderimge" ></div>
-    
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-          </div>
+          </section>
+          <!-- posts -->
+          <section>
+            <hr class="rule-lg">
+            <div class="row p-t-sm p-b-3xl">
+              <div class="col-md-12 col-lg-2 p-r-md sticky" style="height: 96%">
+                <h2>Select Posts
+                  <span class="hidden-xs hidden-sm"><br></span>
+                  <a class="small nowrap overlay" href="https://www.turnwall.com/articles/">All posts</a>
+                </h2>
+
+              </div>
+              <div class="col-md-12 col-lg-10 ">
+                <article>
+                  <div class="row row-10">
+                    <div class="col-sm-6 col-sm-7 col-xs-12">
+                      <p class="post-categories">
+                        <a href="#" rel="category tag ">Design</a>
+                      </p>
+                      <header>
+                        <h4>
+                          <a href="#" class="overlay">Bicycles are
+                            my design inspiration—a Rapha 5×5 talk</a>
+                        </h4>
+                      </header>
+                      <p>I was recently invited to speak at an event called&nbsp;Rapha 5×5: Intervals on Design at Fresh
+                        Tilled Soil, a local design consultancy. It’s a traveling series of design talks that Rapha runs
+                        in
+                        different cities, and here’s the schtick: “5×5: Intervals on Design, a rapid-fire design talk
+                        where
+                        five creatives will talk for five minutes…</p>
+                      <div class="entry-meta">
+                        <!--  &nbsp; &bullet; &nbsp; -->
+                        <span class="span-reading-time rt-reading-time"><span class="rt-label rt-prefix"></span> <span
+                            class="rt-time"> 8</span> <span class="rt-label rt-postfix">minute read</span></span>
+                      </div>
+                    </div>
+                    <div class=" col-sm-12  col-md-6 col-lg-4">
+
+
+                      <a href="#" rel="bookmark" class="post-thumb">
+                        <img width="360" height="240"
+                          src="https://www.turnwall.com/wp-content/uploads/2016/10/Artboard-1-360x240.png" /></noscript>
+                      </a>
+
+                    </div>
+
+                  </div>
+                </article>
+
+                <hr class="rule hidden-md hidden-lg">
+
+                <article>
+                  <div class="row row-10">
+
+                    <div class="col-sm-6 col-sm-7 col-xs-12">
+
+                      <p class="post-categories">
+                        <a href="#" rel="category tag">Adventure</a>
+                      </p>
+
+                      <header class="entry-header">
+                        <h4>
+                          <a href="#" class="overlay">Talking to a giant tanker from a little plastic boat</a>
+                        </h4>
+                      </header>
+                      <p>It’s kayaking season here in New England, and as I was returning to the water this year I
+                        realized I
+                        needed to reacquaint&nbsp;myself with VHF radio usage. So I’m going to share this story from
+                        last
+                        summer in hopes that it helps some other kayakers in a similar situation, as I haven’t found a
+                        ton…
+                      </p>
+                      <div class="entry-meta">
+                        <!--  &nbsp; &bullet; &nbsp; -->
+                        <span class="span-reading-time rt-reading-time"><span class="rt-label rt-prefix"></span> <span
+                            class="rt-time"> 9</span> <span class="rt-label rt-postfix">minute read</span></span>
+                      </div>
+                    </div>
+
+                    <div class=" col-sm-12  col-md-6 col-lg-4">
+
+
+                      <a href="#" rel="bookmark" class="post-thumb">
+                        <img width="360" height="240"
+                          src="https://www.turnwall.com/wp-content/uploads/2014/06/IMG_4040-360x240.jpg" /> </a>
+
+                    </div>
+
+                  </div>
+                </article>
+                <hr class="rule hidden-md hidden-lg">
+
+                <article>
+                  <div class="row row-10">
+
+                    <div class="col-sm-6 col-sm-7 col-xs-12">
+
+                      <p class="post-categories">
+                        <a href="#" rel="category tag">Design</a>
+                      </p>
+
+                      <header class="entry-header">
+                        <h4>
+                          <a href="#" class="overlay">Paying
+                            homage to (or stealing from) your inspiration</a>
+                        </h4>
+                      </header>
+                      <p>I had an idea for the new version of my site: I was going to illustrate objects using only HTML
+                        and
+                        CSS ( to show that I know how to do stuff with code), and make them look like they were neatly
+                        organized in a physical space*&nbsp;(which seems vaguely trendy) according to the underlying
+                        grid…
+                      </p>
+                      <div class="entry-meta">
+                        <!--  &nbsp; &bullet; &nbsp; -->
+                        <span class="span-reading-time rt-reading-time"><span class="rt-label rt-prefix"></span> <span
+                            class="rt-time"> 5</span> <span class="rt-label rt-postfix">minute read</span></span>
+                      </div>
+                    </div>
+
+                    <div class=" col-sm-12  col-md-6 col-lg-4">
+
+                      <a href="#" rel="bookmark" class="post-thumb">
+                        <img width="360" height="240"
+                          src="https://www.turnwall.com/wp-content/uploads/2013/07/gerstner-tische-rotated-cover-e1374492107731-360x240.jpg" /></noscript>
+                      </a>
+
+                    </div>
+
+                  </div>
+                </article>
+              </div>
+
+            </div>
+          </section>
         </section>
+
 
       </main>
+      <!------------ footer content ------------>
+
+      <footer class="site-footer text-dark">
+        <section class="container">
+          <div class="row">
+            <div class="col-lg-2 ">
+              <p><a class="overlay" href="#">Alex Turnwall</a></p>
+            </div>
+            <div class="col-lg-5 ">
+              <p>I’m a Boston-based designer, developer, and strategist. I <a
+                  href="#" class="overlay">consult</a>, <a
+                  href="#" class="overlay">write</a>, and speak about design,
+                entrepreneurship and
+                technology. You might also find me biking, kayaking, skiing, woodworking, or brewing.</p>
+            </div>
+            <div class="col-lg-5 ">
+              <p>Get in touch:</p>
+              <p class="small">
+                Email <a href="mailto:alex@turnwall.com" class="overlay">alex@turnwall.com</a>
+                <br>LinkedIn <a class="overlay" href="#"
+                  target="_blank">/alexturnwall</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="row p-t-2xl">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-10">
+              <p class="small light">Design and content © 2008-2023 by Alex Turnwall unless otherwise noted, all rights
+                reserved.
+              </p>
+            </div>
+          </div>
+        </section>
+      </footer>
     </section>
+      <!------------bootstarp Scripts ------------>
 
-    <footer class="site-footer hidden-print text-dark">
-      <div class="container">
-
-        <div class="row">
-          <div class="col-md-2">
-            <p><a href="https://www.turnwall.com">Alex Turnwall</a></p>
-          </div>
-          <div class="col-md-5">
-            <p>I’m a Boston-based designer, developer, and strategist. I <a
-                href="https://www.turnwall.com/about/#consulting">consult</a>, <a
-                href="https://www.turnwall.com/articles/">write</a>, and speak about design, entrepreneurship and
-              technology. You might also find me biking, kayaking, skiing, woodworking, or brewing.</p>
-          </div>
-          <div class="col-md-5">
-            <p>Get in touch:</p>
-            <p class="small">
-              Email <a href="mailto:alex@turnwall.com">alex@turnwall.com</a>
-              <br>LinkedIn <a href="https://www.linkedin.com/in/alexturnwall/" target="_blank">/alexturnwall</a>
-            </p>
-          </div>
-        </div>
-
-        <div class="row p-t-2xl">
-          <div class="col-md-2"></div>
-          <div class="col-md-10">
-            <p class="small light">Design and content © 2008-2023 by Alex Turnwall unless otherwise noted, all rights
-              reserved.
-            </p>
-          </div>
-        </div>
-
-      </div>
-
-    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"></script>
@@ -333,7 +474,8 @@
       integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
       crossorigin="anonymous"></script>
     <script src="./app.js"></script>
-    <!-- Swiper JS -->
+      <!------------Swiper js Scripts ------------>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
     <!-- Initialize Swiper -->
@@ -343,6 +485,10 @@
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         },
       });
     </script>
